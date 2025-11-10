@@ -1,0 +1,50 @@
+﻿@page
+@model OnlineGallery.Pages.Collections.IndexModel
+@using Microsoft.AspNetCore.Authorization
+@{
+    ViewData["Title"] = "Коллекции";
+}
+
+<h2>Коллекции</h2>
+
+@if (User.IsInRole("Moderator"))
+{
+    <p><a asp-page="Create">Добавить новую коллекцию</a></p>
+}
+
+@if (!Model.Collections.Any())
+{
+    <p>Коллекций пока нет.</p>
+}
+else
+{
+    <div class="gallery">
+        @foreach (var c in Model.Collections)
+        {
+            <div class="thumb">
+                <a asp-page="/Gallery/Index" asp-route-collectionId="@c.Id">
+                    @if (c.Images.Any())
+                    {
+                        <img src="~/uploads/@c.Images.First().FileName" alt="@c.Title" />
+                    }
+                    else
+                    {
+                        <div class="no-image">Нет картин</div>
+                    }
+                    <div class="collection-info">
+                        <strong>@c.Title</strong>
+                        <p>@c.Description</p>
+                        <span>@c.Images.Count картин</span>
+                    </div>
+                </a>
+                @if (User.IsInRole("Moderator"))
+                {
+                    <div class="collection-actions">
+                        <a asp-page="Edit" asp-route-id="@c.Id">Ред.</a> |
+                        <a asp-page="Delete" asp-route-id="@c.Id">Удалить</a>
+                    </div>
+                }
+            </div>
+        }
+    </div>
+}

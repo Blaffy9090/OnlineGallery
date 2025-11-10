@@ -1,0 +1,39 @@
+﻿@page "{id:int}"
+@using Microsoft.AspNetCore.Authorization
+@model OnlineGallery.Pages.Collections.EditModel
+@attribute [Authorize(Roles = "Moderator")]
+
+<h2>Редактировать коллекцию</h2>
+
+<form method="post">
+    <input type="hidden" asp-for="Collection.Id" />
+    <div>
+        <label>Название</label>
+        <input asp-for="Collection.Title" />
+        <span asp-validation-for="Collection.Title" class="text-danger"></span>
+    </div>
+    <div>
+        <label>Описание</label>
+        <textarea asp-for="Collection.Description"></textarea>
+    </div>
+
+    <div>
+        <label>Картины в коллекции:</label><br />
+        @foreach (var img in Model.AllImages)
+        {
+            bool selected = Model.SelectedImageIds.Contains(img.Id);
+            <div>
+                <input type="checkbox" name="SelectedImageIds" value="@img.Id" @(selected ? "checked" : "") />
+                <img src="~/uploads/@img.FileName" alt="@img.Title" width="80" />
+                <span>@img.Title (@(img.Author?.Name ?? "—"))</span>
+            </div>
+        }
+    </div>
+
+    <button type="submit">Сохранить</button>
+    <a asp-page="Index">Отмена</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

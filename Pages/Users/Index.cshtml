@@ -1,0 +1,19 @@
+﻿@page
+@model OnlineGallery.Pages.Users.IndexModel
+<h2>Пользователи</h2>
+
+<table class="table">
+    <tr><th>Имя</th><th>Email</th><th>DisplayName</th><th></th></tr>
+    @foreach (var u in Model.Users)
+    {
+        <tr>
+            <td>@u.UserName</td>
+            <td>@u.Email</td>
+            <td>@u.DisplayName</td>
+            <td>
+                <a asp-page="Edit" asp-route-id="@u.Id">Ред.</a> |
+                <a asp-page="Delete" asp-route-id="@u.Id">Удал.</a>
+            </td>
+        </tr>
+    }
+</table>

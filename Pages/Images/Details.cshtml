@@ -1,0 +1,26 @@
+﻿@page "{id:int}"
+@model OnlineGallery.Pages.Images.DetailsModel
+@{
+    ViewData["Title"] = "Детали изображения";
+}
+
+<h2>@Model.Image.Title</h2>
+
+@if (!string.IsNullOrEmpty(Model.Image.FileName))
+{
+    <img src="~/uploads/@Model.Image.FileName" alt="@Model.Image.Title" style="max-width:400px;" />
+}
+
+<p><strong>Автор:</strong> @Model.Image.Author?.Name</p>
+<p><strong>Коллекция:</strong> @Model.Image.Collection?.Title</p>
+<p><strong>Описание:</strong> @Model.Image.Description</p>
+<p><strong>Дата картины:</strong> @Model.Image.PaintingDate?.ToString("d MMM yyyy")</p>
+<p><strong>Добавлено:</strong> @Model.Image.CreatedAt.ToLocalTime().ToString("g")</p>
+
+<p>
+    @if (User.IsInRole("Moderator"))
+    {
+    <a asp-page="Edit" asp-route-id="@Model.Image.Id" class="btn btn-warning">Редактировать</a>
+    }
+    <button type="button" onclick="history.back()">Назад</button>
+</p>

@@ -1,0 +1,36 @@
+﻿@page
+@using Microsoft.AspNetCore.Authorization
+@model OnlineGallery.Pages.Collections.CreateModel
+@attribute [Authorize(Roles = "Moderator")]
+
+<h2>Создать коллекцию</h2>
+
+<form method="post">
+    <div>
+        <label>Название</label>
+        <input asp-for="Input.Title" />
+        <span asp-validation-for="Input.Title" class="text-danger"></span>
+    </div>
+    <div>
+        <label>Описание</label>
+        <textarea asp-for="Input.Description"></textarea>
+    </div>
+
+    <div>
+        <label>Добавить картины в коллекцию:</label><br />
+        @foreach (var img in Model.AllImages)
+        {
+            <div>
+                <input type="checkbox" name="SelectedImageIds" value="@img.Id" />
+                <img src="~/uploads/@img.FileName" alt="@img.Title" width="80" />
+                <span>@img.Title (@(img.Author?.Name ?? "—"))</span>
+            </div>
+        }
+    </div>
+
+    <button type="submit">Создать</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

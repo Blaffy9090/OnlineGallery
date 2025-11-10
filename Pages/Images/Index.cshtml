@@ -1,0 +1,52 @@
+﻿@page
+@model OnlineGallery.Pages.Images.IndexModel
+@{
+    ViewData["Title"] = "Галерея картин";
+}
+
+<h2>Галерея картин</h2>
+
+<p>
+    <a asp-page="Create">Добавить новую</a>
+</p>
+
+<form method="get">
+    <input type="text" name="searchString" value="@Model.CurrentFilter" placeholder="Поиск по названию или автору..." />
+    <button type="submit">Поиск</button>
+</form>
+
+<table class="table table-striped mt-3">
+    <thead>
+        <tr>
+            <th>
+                <a asp-page="./Index" asp-route-sortOrder="title">Название</a>
+            </th>
+            <th>
+                <a asp-page="./Index" asp-route-sortOrder="author">Автор</a>
+            </th>
+            <th>
+                <a asp-page="./Index" asp-route-sortOrder="date">Дата картины</a>
+            </th>
+            <th>Коллекция</th>
+            <th>Действия</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var img in Model.Images)
+        {
+            <tr>
+                <td>@img.Title</td>
+                <td>@img.Author?.Name</td>
+                <td>@(img.PaintingDate?.ToString("dd MMMM yyyy") ?? "-")</td>
+                <td>@img.Collection?.Title</td>
+                <td>
+                    <a asp-page="Details" asp-route-id="@img.Id">Просмотр</a>
+                    @if (User.IsInRole("Moderator"))
+                    {
+                        <text> | <a asp-page="Edit" asp-route-id="@img.Id">Ред.</a> | <a asp-page="Delete" asp-route-id="@img.Id">Удал.</a></text>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

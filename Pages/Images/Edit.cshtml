@@ -1,0 +1,12 @@
+﻿@page "{id:int}"
+@model OnlineGallery.Pages.Images.EditModel
+<h2>Редактировать картину</h2>
+
+<form method="post">
+    <div><label>Название</label><input asp-for="ImageItem.Title" /></div>
+    <div><label>Описание</label><textarea asp-for="ImageItem.Description"></textarea></div>
+    <div><label>Автор</label><select asp-for="ImageItem.AuthorId" asp-items="Model.Authors"></select></div>
+    <div><label>Коллекция</label><select asp-for="ImageItem.CollectionId" asp-items="Model.Collections"></select></div>
+    <div><label>Дата картины</label><input asp-for="ImageItem.PaintingDate" type="date" /></div>
+    <button type="submit">Сохранить</button>
+</form>

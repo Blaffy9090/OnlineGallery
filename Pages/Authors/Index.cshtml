@@ -1,0 +1,21 @@
+﻿@page
+@model OnlineGallery.Pages.Authors.IndexModel
+@{
+    ViewData["Title"] = "Authors";
+}
+<h2>Авторы</h2>
+<p><a asp-page="Create">Добавить автора</a></p>
+<table class="table">
+    <tr><th>Имя</th><th>Биография</th><th></th></tr>
+    @foreach (var a in Model.Authors)
+    {
+        <tr>
+            <td>@a.Name</td>
+            <td>@a.Bio</td>
+            <td>
+                <a asp-page="Edit" asp-route-id="@a.Id">Ред.</a> |
+                <a asp-page="Delete" asp-route-id="@a.Id">Удал.</a>
+            </td>
+        </tr>
+    }
+</table>

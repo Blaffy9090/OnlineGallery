@@ -1,0 +1,8 @@
+﻿@page "{id}"
+@model OnlineGallery.Pages.Users.DeleteModel
+<h2>Удалить пользователя</h2>
+<form method="post">
+    <p>Вы уверены, что хотите удалить <strong>@Model.UserData.UserName</strong>?</p>
+    <button type="submit">Удалить</button> |
+    <a asp-page="Index">Отмена</a>
+</form>

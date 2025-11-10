@@ -1,0 +1,25 @@
+﻿@page "{id:int}"
+@model OnlineGallery.Pages.Authors.EditModel
+@using Microsoft.AspNetCore.Authorization
+@attribute [Authorize(Roles = "Moderator")]
+
+<h2>Редактировать автора</h2>
+
+<form method="post">
+    <input type="hidden" asp-for="Author.Id" />
+    <div>
+        <label>Имя</label>
+        <input asp-for="Author.Name" class="form-control" />
+        <span asp-validation-for="Author.Name" class="text-danger"></span>
+    </div>
+    <div>
+        <label>Биография</label>
+        <textarea asp-for="Author.Bio" class="form-control"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Сохранить</button>
+    <a asp-page="Index" class="btn btn-secondary">Отмена</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

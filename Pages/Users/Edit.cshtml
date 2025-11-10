@@ -1,0 +1,24 @@
+﻿@page "{id}"
+@model OnlineGallery.Pages.Users.EditModel
+<h2>Редактировать пользователя</h2>
+
+<form method="post">
+    <input type="hidden" asp-for="UserData.Id" />
+    <div>
+        <label>Логин</label>
+        <input asp-for="UserData.UserName" />
+    </div>
+    <div>
+        <label>Email</label>
+        <input asp-for="UserData.Email" />
+    </div>
+    <div>
+        <label>Отображаемое имя</label>
+        <input asp-for="UserData.DisplayName" />
+    </div>
+    <div>
+        <input type="checkbox" asp-for="IsModerator" />
+        <label>Модератор</label>
+    </div>
+    <button type="submit">Сохранить</button>
+</form>

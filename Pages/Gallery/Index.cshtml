@@ -1,0 +1,64 @@
+﻿@page
+@model OnlineGallery.Pages.Gallery.IndexModel
+@{
+    ViewData["Title"] = "Галерея";
+}
+
+<h2>Галерея</h2>
+
+<form method="get" class="form-inline">
+    <input type="text" name="searchString" value="@Model.Query" placeholder="Поиск по названию" />
+    <select asp-for="AuthorId" asp-items="Model.AuthorSelect">
+        <option value="">Все авторы</option>
+    </select>
+    <select name="sort">
+        <option value="">Сортировать по</option>
+        @if (Model.Sort == "date_asc")
+        {
+            <option value="date_asc" selected>Дата создания (по возр.)</option>
+        }
+        else
+        {
+            <option value="date_asc">Дата создания (по возр.)</option>
+        }
+
+        @if (Model.Sort == "date_desc")
+        {
+            <option value="date_desc" selected>Дата создания (по убыв.)</option>
+        }
+        else
+        {
+            <option value="date_desc">Дата создания (по убыв.)</option>
+        }
+    </select>
+
+    @if (Model.CollectionId.HasValue)
+    {
+        <input type="hidden" name="collectionId" value="@Model.CollectionId.Value" />
+    }
+
+    <button type="submit">Применить</button>
+</form>
+
+@if(!Model.Images.Any())
+{
+    <p>Картин пока нет.</p>
+}
+else
+{
+    <div class="gallery">
+        @foreach(var img in Model.Images)
+        {
+            <div class="thumb">
+                <a asp-page="/Images/Details" asp-route-id="@img.Id">
+                    <img src="~/uploads/@img.FileName" alt="@img.Title" />
+                </a>
+                <div>
+                    <strong>@img.Title</strong><br />
+                    @if(img.Author != null) { <span>Автор: @img.Author.Name</span><br /> }
+                    @if(img.PaintingDate.HasValue) { <span>Дата картины: @img.PaintingDate.Value.ToString("d MMMM yyyy")</span> }
+                </div>
+            </div>
+        }
+    </div>
+}

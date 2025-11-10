@@ -1,0 +1,19 @@
+﻿@page "{id:int}"
+@model OnlineGallery.Pages.Authors.DeleteModel
+@using Microsoft.AspNetCore.Authorization
+@attribute [Authorize(Roles = "Moderator")]
+
+<h2>Удалить автора</h2>
+
+<h3>Вы уверены, что хотите удалить этого автора?</h3>
+
+<div>
+    <strong>@Model.Author.Name</strong>
+    <p>@Model.Author.Bio</p>
+</div>
+
+<form method="post">
+    <input type="hidden" asp-for="Author.Id" />
+    <button type="submit" class="btn btn-danger">Удалить</button>
+    <a asp-page="Index" class="btn btn-secondary">Отмена</a>
+</form>

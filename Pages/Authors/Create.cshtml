@@ -1,0 +1,9 @@
+﻿@page
+@model OnlineGallery.Pages.Authors.CreateModel
+<h2>Добавить автора</h2>
+
+<form method="post">
+    <div><label>Имя</label><input asp-for="Author.Name" /></div>
+    <div><label>Биография</label><textarea asp-for="Author.Bio"></textarea></div>
+    <button type="submit">Сохранить</button>
+</form>

@@ -1,0 +1,21 @@
+﻿@page "{id:int}"
+@using Microsoft.AspNetCore.Authorization
+@model OnlineGallery.Pages.Collections.DeleteModel
+@attribute [Authorize(Roles = "Moderator")]
+
+<h2>Удалить коллекцию</h2>
+
+@if (Model.Collection != null)
+{
+    <div>
+        <h3>@Model.Collection.Title</h3>
+        <p>@Model.Collection.Description</p>
+        <p>Картин в коллекции: @Model.Collection.Images.Count</p>
+
+        <form method="post">
+            <input type="hidden" asp-for="Collection.Id" />
+            <button type="submit">Удалить</button>
+            <a asp-page="Index">Отмена</a>
+        </form>
+    </div>
+}
