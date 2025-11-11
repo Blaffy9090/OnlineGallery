@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\VisualProjects\\OnlineGallery\\OnlineGallery.csproj": {}
+    "C:\\Users\\PC\\Source\\Repos\\OnlineGallery\\OnlineGallery.csproj": {}
   },
   "projects": {
-    "C:\\VisualProjects\\OnlineGallery\\OnlineGallery.csproj": {
+    "C:\\Users\\PC\\Source\\Repos\\OnlineGallery\\OnlineGallery.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\VisualProjects\\OnlineGallery\\OnlineGallery.csproj",
+        "projectUniqueName": "C:\\Users\\PC\\Source\\Repos\\OnlineGallery\\OnlineGallery.csproj",
         "projectName": "OnlineGallery",
-        "projectPath": "C:\\VisualProjects\\OnlineGallery\\OnlineGallery.csproj",
-        "packagesPath": "C:\\Users\\ellob\\.nuget\\packages\\",
-        "outputPath": "C:\\VisualProjects\\OnlineGallery\\obj\\",
+        "projectPath": "C:\\Users\\PC\\Source\\Repos\\OnlineGallery\\OnlineGallery.csproj",
+        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\PC\\Source\\Repos\\OnlineGallery\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\ellob\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -102,7 +103,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

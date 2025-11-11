@@ -17,117 +17,117 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = OnlineGallery
 build_property.RootNamespace = OnlineGallery
-build_property.ProjectDir = C:\VisualProjects\OnlineGallery\
+build_property.ProjectDir = C:\Users\PC\Source\Repos\OnlineGallery\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\VisualProjects\OnlineGallery
+build_property.MSBuildProjectDirectory = C:\Users\PC\Source\Repos\OnlineGallery
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/VisualProjects/OnlineGallery/Areas/Identity/Pages/_ViewStart.cshtml]
+[C:/Users/PC/Source/Repos/OnlineGallery/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/VisualProjects/OnlineGallery/Pages/Authors/Create.cshtml]
+[C:/Users/PC/Source/Repos/OnlineGallery/Pages/Authors/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aG9yc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/VisualProjects/OnlineGallery/Pages/Authors/Delete.cshtml]
+[C:/Users/PC/Source/Repos/OnlineGallery/Pages/Authors/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aG9yc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/VisualProjects/OnlineGallery/Pages/Authors/Edit.cshtml]
+[C:/Users/PC/Source/Repos/OnlineGallery/Pages/Authors/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aG9yc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/VisualProjects/OnlineGallery/Pages/Authors/Index.cshtml]
+[C:/Users/PC/Source/Repos/OnlineGallery/Pages/Authors/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aG9yc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/VisualProjects/OnlineGallery/Pages/Collections/Create.cshtml]
+[C:/Users/PC/Source/Repos/OnlineGallery/Pages/Collections/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29sbGVjdGlvbnNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/VisualProjects/OnlineGallery/Pages/Collections/Delete.cshtml]
+[C:/Users/PC/Source/Repos/OnlineGallery/Pages/Collections/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29sbGVjdGlvbnNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/VisualProjects/OnlineGallery/Pages/Collections/Edit.cshtml]
+[C:/Users/PC/Source/Repos/OnlineGallery/Pages/Collections/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29sbGVjdGlvbnNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/VisualProjects/OnlineGallery/Pages/Collections/Index.cshtml]
+[C:/Users/PC/Source/Repos/OnlineGallery/Pages/Collections/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29sbGVjdGlvbnNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/VisualProjects/OnlineGallery/Pages/Error.cshtml]
+[C:/Users/PC/Source/Repos/OnlineGallery/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/VisualProjects/OnlineGallery/Pages/Gallery/Index.cshtml]
+[C:/Users/PC/Source/Repos/OnlineGallery/Pages/Gallery/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2FsbGVyeVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/VisualProjects/OnlineGallery/Pages/Images/Create.cshtml]
+[C:/Users/PC/Source/Repos/OnlineGallery/Pages/Images/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW1hZ2VzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/VisualProjects/OnlineGallery/Pages/Images/Delete.cshtml]
+[C:/Users/PC/Source/Repos/OnlineGallery/Pages/Images/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW1hZ2VzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/VisualProjects/OnlineGallery/Pages/Images/Details.cshtml]
+[C:/Users/PC/Source/Repos/OnlineGallery/Pages/Images/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW1hZ2VzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/VisualProjects/OnlineGallery/Pages/Images/Edit.cshtml]
+[C:/Users/PC/Source/Repos/OnlineGallery/Pages/Images/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW1hZ2VzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/VisualProjects/OnlineGallery/Pages/Images/Index.cshtml]
+[C:/Users/PC/Source/Repos/OnlineGallery/Pages/Images/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW1hZ2VzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/VisualProjects/OnlineGallery/Pages/Index.cshtml]
+[C:/Users/PC/Source/Repos/OnlineGallery/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/VisualProjects/OnlineGallery/Pages/Privacy.cshtml]
+[C:/Users/PC/Source/Repos/OnlineGallery/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/VisualProjects/OnlineGallery/Pages/Shared/_LoginPartial.cshtml]
+[C:/Users/PC/Source/Repos/OnlineGallery/Pages/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/VisualProjects/OnlineGallery/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/PC/Source/Repos/OnlineGallery/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/VisualProjects/OnlineGallery/Pages/Users/Delete.cshtml]
+[C:/Users/PC/Source/Repos/OnlineGallery/Pages/Users/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlcnNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/VisualProjects/OnlineGallery/Pages/Users/Edit.cshtml]
+[C:/Users/PC/Source/Repos/OnlineGallery/Pages/Users/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlcnNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/VisualProjects/OnlineGallery/Pages/Users/Index.cshtml]
+[C:/Users/PC/Source/Repos/OnlineGallery/Pages/Users/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlcnNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/VisualProjects/OnlineGallery/Pages/_ViewImports.cshtml]
+[C:/Users/PC/Source/Repos/OnlineGallery/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/VisualProjects/OnlineGallery/Pages/_ViewStart.cshtml]
+[C:/Users/PC/Source/Repos/OnlineGallery/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/VisualProjects/OnlineGallery/Pages/Shared/_Layout.cshtml]
+[C:/Users/PC/Source/Repos/OnlineGallery/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-5ktfegzj24
