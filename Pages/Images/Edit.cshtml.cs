@@ -28,10 +28,9 @@ namespace OnlineGallery.Pages.Images
 
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid) return Page();
             _db.Attach(ImageItem).State = EntityState.Modified;
             await _db.SaveChangesAsync();
-            return RedirectToPage("Index");
+            return RedirectToPage("/Images");
         }
     }
 }
