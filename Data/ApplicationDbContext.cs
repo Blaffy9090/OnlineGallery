@@ -4,11 +4,7 @@ using OnlineGallery.Models;
 
 namespace OnlineGallery.Data
 {
-    /// <summary>
-    /// Простой DbContext с теми же DbSet'ами, что и ApplicationDbContext.
-    /// Создан, чтобы устранить ошибки ссылок на GalleryContext.
-    /// При желании можно заменить все ссылки на GalleryContext на ApplicationDbContext.
-    /// </summary>
+
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
