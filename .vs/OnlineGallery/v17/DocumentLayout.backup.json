@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\VisualProjects\\OnlineGallery\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{3D3E5555-254D-454E-BED3-CD6D96AFAEED}|OnlineGallery.csproj|c:\\visualprojects\\onlinegallery\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{3D3E5555-254D-454E-BED3-CD6D96AFAEED}|OnlineGallery.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{3D3E5555-254D-454E-BED3-CD6D96AFAEED}|OnlineGallery.csproj|c:\\visualprojects\\onlinegallery\\pages\\collections\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{3D3E5555-254D-454E-BED3-CD6D96AFAEED}|OnlineGallery.csproj|solutionrelative:pages\\collections\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3D3E5555-254D-454E-BED3-CD6D96AFAEED}|OnlineGallery.csproj|c:\\visualprojects\\onlinegallery\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{3D3E5555-254D-454E-BED3-CD6D96AFAEED}|OnlineGallery.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{3D3E5555-254D-454E-BED3-CD6D96AFAEED}|OnlineGallery.csproj|c:\\visualprojects\\onlinegallery\\pages\\gallery\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3D3E5555-254D-454E-BED3-CD6D96AFAEED}|OnlineGallery.csproj|solutionrelative:pages\\gallery\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D3E5555-254D-454E-BED3-CD6D96AFAEED}|OnlineGallery.csproj|c:\\visualprojects\\onlinegallery\\pages\\images\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3D3E5555-254D-454E-BED3-CD6D96AFAEED}|OnlineGallery.csproj|solutionrelative:pages\\images\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3D3E5555-254D-454E-BED3-CD6D96AFAEED}|OnlineGallery.csproj|c:\\visualprojects\\onlinegallery\\pages\\collections\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -31,10 +39,6 @@
       "RelativeMoniker": "D:0:0:{3D3E5555-254D-454E-BED3-CD6D96AFAEED}|OnlineGallery.csproj|solutionrelative:pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3D3E5555-254D-454E-BED3-CD6D96AFAEED}|OnlineGallery.csproj|c:\\visualprojects\\onlinegallery\\pages\\gallery\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3D3E5555-254D-454E-BED3-CD6D96AFAEED}|OnlineGallery.csproj|solutionrelative:pages\\gallery\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3D3E5555-254D-454E-BED3-CD6D96AFAEED}|OnlineGallery.csproj|c:\\visualprojects\\onlinegallery\\pages\\gallery\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3D3E5555-254D-454E-BED3-CD6D96AFAEED}|OnlineGallery.csproj|solutionrelative:pages\\gallery\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -46,7 +50,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -66,20 +70,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\VisualProjects\\OnlineGallery\\Pages\\Images\\Details.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Images\\Details.cshtml",
+              "ToolTip": "C:\\VisualProjects\\OnlineGallery\\Pages\\Images\\Details.cshtml",
+              "RelativeToolTip": "Pages\\Images\\Details.cshtml",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAvwBoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-10T22:31:43.423Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "site.css",
               "DocumentMoniker": "C:\\VisualProjects\\OnlineGallery\\wwwroot\\css\\site.css",
               "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
               "ToolTip": "C:\\VisualProjects\\OnlineGallery\\wwwroot\\css\\site.css",
               "RelativeToolTip": "wwwroot\\css\\site.css",
-              "ViewState": "AgIAAHgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAIkAAAAAAAAAAAAAAJsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2025-11-10T22:19:00.849Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\VisualProjects\\OnlineGallery\\Pages\\Collections\\Edit.cshtml",
               "RelativeDocumentMoniker": "Pages\\Collections\\Edit.cshtml",
@@ -92,20 +109,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\VisualProjects\\OnlineGallery\\Pages\\Collections\\Index.cshtml",
               "RelativeDocumentMoniker": "Pages\\Collections\\Index.cshtml",
               "ToolTip": "C:\\VisualProjects\\OnlineGallery\\Pages\\Collections\\Index.cshtml",
               "RelativeToolTip": "Pages\\Collections\\Index.cshtml",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABYAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAACQAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-11-10T22:18:35.154Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\VisualProjects\\OnlineGallery\\Pages\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Pages\\Shared\\_Layout.cshtml",
@@ -118,7 +135,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "_ViewStart.cshtml",
               "DocumentMoniker": "C:\\VisualProjects\\OnlineGallery\\Pages\\_ViewStart.cshtml",
               "RelativeDocumentMoniker": "Pages\\_ViewStart.cshtml",
@@ -131,7 +148,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "_ViewImports.cshtml",
               "DocumentMoniker": "C:\\VisualProjects\\OnlineGallery\\Pages\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "Pages\\_ViewImports.cshtml",
@@ -144,7 +161,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\VisualProjects\\OnlineGallery\\Pages\\Index.cshtml",
               "RelativeDocumentMoniker": "Pages\\Index.cshtml",
@@ -157,7 +174,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Index.cshtml.cs",
               "DocumentMoniker": "C:\\VisualProjects\\OnlineGallery\\Pages\\Gallery\\Index.cshtml.cs",
               "RelativeDocumentMoniker": "Pages\\Gallery\\Index.cshtml.cs",
@@ -170,13 +187,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 2,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\VisualProjects\\OnlineGallery\\Pages\\Gallery\\Index.cshtml",
               "RelativeDocumentMoniker": "Pages\\Gallery\\Index.cshtml",
               "ToolTip": "C:\\VisualProjects\\OnlineGallery\\Pages\\Gallery\\Index.cshtml",
               "RelativeToolTip": "Pages\\Gallery\\Index.cshtml",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAACEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-11-10T22:00:59.915Z",
               "EditorCaption": ""
