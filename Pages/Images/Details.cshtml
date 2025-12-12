@@ -20,7 +20,101 @@
 <p>
     @if (User.IsInRole("Moderator"))
     {
-    <a asp-page="Edit" asp-route-id="@Model.Image.Id" class="btn btn-warning">Редактировать</a>
+        <a asp-page="Edit" asp-route-id="@Model.Image.Id" class="btn btn-warning">Редактировать</a>
     }
     <button type="button" onclick="history.back()">Назад</button>
 </p>
+
+<hr />
+
+<div>
+    <strong>Теги:</strong>
+    <div id="tags">
+        @foreach (var tag in Model.Tags)
+        {
+            <span class="tag-chip">@tag.Name</span>
+        }
+    </div>
+
+    @if (User.IsInRole("Moderator"))
+    {
+        <input type="text" id="tagInput" placeholder="Добавить тег" />
+        <button id="addTagBtn" class="btn btn-sm btn-primary">Добавить</button>
+    }
+</div>
+
+<hr />
+
+<div>
+    <strong>Нравится:</strong>
+    <button id="like-btn" class="btn btn-primary @(Model.UserLiked ? "liked" : "")"
+            data-url="@Url.Page("Details", null, new { id = Model.Image.Id, handler = "ToggleLike" })">
+        <span id="likeCount">@Model.LikeCount</span> ❤️
+    </button>
+</div>
+
+@section Scripts {
+    <script>
+        const token = document.querySelector('input[name="__RequestVerificationToken"]').value;
+        // ---------- Like button AJAX ----------
+        const likeBtn = document.getElementById("like-btn");
+        likeBtn.addEventListener("click", async () => {
+            const url = '@Url.Page("Details", null, new { id = Model.Image.Id, handler = "ToggleLike" })';
+            
+            try {
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: { 'RequestVerificationToken': token },
+                    body: JSON.stringify({})
+                });
+
+                if (!response.ok) throw new Error("Ошибка запроса");
+                const data = await response.json();
+                document.getElementById("likeCount").innerText = data.likeCount;
+                likeBtn.classList.toggle("liked", data.likedByUser);
+            } catch (err) {
+                alert("Не удалось поставить лайк: " + err.message);
+            }
+        });
+
+        // ---------- Tags add/remove ----------
+        @if (User.IsInRole("Moderator"))
+        {
+                <text>
+                const tagInput = document.getElementById('tagInput');
+                const addBtn = document.getElementById('addTagBtn');
+                const tagsDiv = document.getElementById('tags');
+
+                addBtn.addEventListener('click', async () => {
+                    const tag = tagInput.value.trim();
+                    if (!tag) return;
+                        const url = '@Url.Page("Details", null, new { id = Model.Image.Id, handler = "AddTag" })';
+
+                    try {
+                        const response = await fetch(url, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'RequestVerificationToken': token
+                            },
+                            body: JSON.stringify({ name: tag }) // for tags
+                        });
+
+                        const data = await response.json();
+                        if (data.success) {
+                            const span = document.createElement('span');
+                            span.className = 'tag-chip';
+                            span.innerText = tag;
+                            tagsDiv.appendChild(span);
+                            tagInput.value = '';
+                        } else {
+                            alert(data.error);
+                        }
+                    } catch (err) {
+                        alert("Ошибка добавления тега: " + err.message);
+                    }
+                });
+                </text>
+        }
+    </script>
+}

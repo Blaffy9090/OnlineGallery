@@ -28,5 +28,8 @@ namespace OnlineGallery.Models
 
         [DataType(DataType.DateTime)]
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+
+        public List<ImageTag> Tags { get; set; } = new();
+
     }
 }

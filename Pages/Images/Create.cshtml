@@ -6,10 +6,7 @@
 <h2>Добавить картину</h2>
 
 <form method="post" enctype="multipart/form-data">
-    <div>
-        <label>Название</label>
-        <input asp-for="Input.Title" />
-    </div>
+    <div><label>Название</label><input asp-for="Input.Title" /></div>
     <div>
         <label>Автор</label>
         <select asp-for="Input.AuthorId" asp-items="Model.AuthorSelect">
@@ -22,17 +19,48 @@
             <option value="">-- нет --</option>
         </select>
     </div>
+    <div><label>Дата картины</label><input asp-for="Input.PaintingDate" type="date" /></div>
+    <div><label>Описание</label><textarea asp-for="Input.Description"></textarea></div>
+    <div><label>Файл (jpg/png)</label><input type="file" name="ImageFile" /></div>
+
     <div>
-        <label>Дата создания картины</label>
-        <input asp-for="Input.PaintingDate" type="date" />
+        <label>Теги</label>
+        <input type="text" id="tagInput" placeholder="Добавить тег" />
+        <button type="button" id="addTagBtn" class="btn btn-sm btn-primary">Добавить</button>
+        <div id="tags"></div>
     </div>
-    <div>
-        <label>Описание</label>
-        <textarea asp-for="Input.Description"></textarea>
-    </div>
-    <div>
-        <label>Файл (jpg/png)</label>
-        <input type="file" name="ImageFile" />
-    </div>
+
+    <input type="hidden" id="hiddenTags" name="Input.TagsJson" />
+
     <button type="submit">Сохранить</button>
 </form>
+
+@section Scripts {
+    <script>
+        const tagInput = document.getElementById('tagInput');
+        const addBtn = document.getElementById('addTagBtn');
+        const tagsDiv = document.getElementById('tags');
+        const hiddenTags = document.getElementById('hiddenTags');
+
+        const tagsList = [];
+
+        addBtn.addEventListener('click', () => {
+            const tag = tagInput.value.trim();
+            if (!tag || tagsList.includes(tag)) return;
+
+            tagsList.push(tag);
+            const span = document.createElement('span');
+            span.className = 'tag-chip';
+            span.innerText = tag;
+            span.addEventListener('click', () => {
+                tagsDiv.removeChild(span);
+                const index = tagsList.indexOf(tag);
+                if (index > -1) tagsList.splice(index, 1);
+                hiddenTags.value = JSON.stringify(tagsList);
+            });
+            tagsDiv.appendChild(span);
+            hiddenTags.value = JSON.stringify(tagsList);
+            tagInput.value = '';
+        });
+    </script>
+}

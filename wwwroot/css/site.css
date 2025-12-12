@@ -129,47 +129,62 @@ transition: transform 0.3s, box-shadow 0.3s;
     color: #555;
 }
 
-    .thumb div strong {
-        color: #2c3e50;
-    }
+.thumb div strong {
+    color: #2c3e50;
+}
+
+.tag-chip {
+    display: inline-block;
+    padding: 4px 8px;
+    margin: 2px;
+    background-color: #eee;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+#like-btn.liked {
+    background-color: #ff4d4d;
+    color: white;
+}
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-form.form-inline {
-    flex-direction: column;
-    align-items: center;
-}
+    form.form-inline {
+        flex-direction: column;
+        align-items: center;
+    }
 
-.gallery {
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-}
+    .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
 
-.collection-actions {
-    padding: 5px 10px;
-    border-top: 1px solid #eee;
-    font-size: 0.85rem;
-    text-align: right;
-}
+    .collection-actions {
+        padding: 5px 10px;
+        border-top: 1px solid #eee;
+        font-size: 0.85rem;
+        text-align: right;
+    }
 
-.collection-actions a {
-    color: #3498db;
-}
+        .collection-actions a {
+            color: #3498db;
+        }
 
-.btn-back {
-    background-color: #3498db;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s;
-}
+    .btn-back {
+        background-color: #3498db;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
 
-.btn-back:hover {
-    background-color: #2980b9;
-}
+        .btn-back:hover {
+            background-color: #2980b9;
+        }
 
-.no-image {
-font-size: 0.9rem;
-color: #999;
+    .no-image {
+        font-size: 0.9rem;
+        color: #999;
+    }
 }

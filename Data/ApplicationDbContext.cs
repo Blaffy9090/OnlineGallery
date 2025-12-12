@@ -17,6 +17,9 @@ namespace OnlineGallery.Data
         public DbSet<ImageItem> Images { get; set; } = null!;
         public DbSet<Collection> Collections { get; set; } = null!;
 
+        public DbSet<ImageTag> Tags => Set<ImageTag>();
+
+        public DbSet<Like> Likes { get; set; } = null!;
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -32,6 +35,29 @@ namespace OnlineGallery.Data
                 .WithMany(c => c.Images)
                 .HasForeignKey(i => i.CollectionId)
                 .OnDelete(DeleteBehavior.SetNull);
+
+            modelBuilder.Entity<ImageTag>()
+                .HasOne(t => t.Image)
+                .WithMany(i => i.Tags)
+                .HasForeignKey(t => t.ImageId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Like>()
+                .HasOne(l => l.Image)
+                .WithMany()                      
+                .HasForeignKey(l => l.ImageId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Like>()
+                .HasOne(l => l.User)
+                .WithMany(u => u.Likes)
+                .HasForeignKey(l => l.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Like>()
+                .HasIndex(l => new { l.UserId, l.ImageId })
+                .IsUnique();
         }
+
     }
 }

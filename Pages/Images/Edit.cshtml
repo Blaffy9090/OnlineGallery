@@ -8,5 +8,50 @@
     <div><label>Автор</label><select asp-for="ImageItem.AuthorId" asp-items="Model.Authors"></select></div>
     <div><label>Коллекция</label><select asp-for="ImageItem.CollectionId" asp-items="Model.Collections"></select></div>
     <div><label>Дата картины</label><input asp-for="ImageItem.PaintingDate" type="date" /></div>
+
+    <div>
+        <label>Теги</label>
+        <div id="tags-wrapper">
+            <input type="text" id="tag-input" placeholder="Введите тег и нажмите Enter" />
+            <div id="tags-container"></div>
+        </div>
+        <input type="hidden" name="TagNames" id="TagNames" />
+    </div>
+
     <button type="submit">Сохранить</button>
 </form>
+
+@section Scripts {
+    <script>
+        const tagInput = document.getElementById('tag-input');
+        const tagsContainer = document.getElementById('tags-container');
+        const hiddenTags = document.getElementById('TagNames');
+
+        let tags = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.Tags.ToList()));
+
+        function renderTags() {
+            tagsContainer.innerHTML = '';
+            tags.forEach((t,i)=>{
+                const span = document.createElement('span');
+                span.className='tag-chip';
+                span.textContent = t+' ×';
+                span.onclick = ()=>{ tags.splice(i,1); renderTags(); };
+                tagsContainer.appendChild(span);
+            });
+            hiddenTags.value = tags.join(',');
+        }
+        renderTags();
+
+        tagInput.addEventListener('keydown', e=>{
+            if(e.key==='Enter'){
+                e.preventDefault();
+                const val=tagInput.value.trim();
+                if(val && !tags.includes(val)){
+                    tags.push(val);
+                    tagInput.value='';
+                    renderTags();
+                }
+            }
+        });
+    </script>
+}

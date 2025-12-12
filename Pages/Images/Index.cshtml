@@ -7,27 +7,28 @@
 <h2>Галерея картин</h2>
 
 <p>
-    <a asp-page="Create">Добавить новую</a>
+    @if (User.IsInRole("Moderator"))
+    {
+        <a asp-page="Create" class="btn btn-primary">Добавить новую</a>
+    }
 </p>
 
-<form method="get">
-    <input type="text" name="searchString" value="@Model.CurrentFilter" placeholder="Поиск по названию или автору..." />
-    <button type="submit">Поиск</button>
+<form method="get" class="mb-3">
+    <input type="text" name="searchString" value="@Model.CurrentFilter" placeholder="Поиск по названию или автору..." class="form-control d-inline-block w-auto" />
+    <input type="text" name="tag" value="@Model.CurrentTag" placeholder="Фильтр по тегу" class="form-control d-inline-block w-auto" />
+    <input type="number" name="minLikes" value="@Model.MinLikes" placeholder="Мин. лайков" class="form-control d-inline-block w-auto" />
+    <button type="submit" class="btn btn-secondary">Применить</button>
 </form>
 
-<table class="table table-striped mt-3">
+<table class="table table-striped">
     <thead>
         <tr>
-            <th>
-                <a asp-page="./Index" asp-route-sortOrder="title">Название</a>
-            </th>
-            <th>
-                <a asp-page="./Index" asp-route-sortOrder="author">Автор</a>
-            </th>
-            <th>
-                <a asp-page="./Index" asp-route-sortOrder="date">Дата картины</a>
-            </th>
+            <th><a asp-page="./Index" asp-route-sortOrder="title">Название</a></th>
+            <th><a asp-page="./Index" asp-route-sortOrder="author">Автор</a></th>
+            <th><a asp-page="./Index" asp-route-sortOrder="date">Дата картины</a></th>
             <th>Коллекция</th>
+            <th>Лайки</th>
+            <th>Теги</th>
             <th>Действия</th>
         </tr>
     </thead>
@@ -36,9 +37,16 @@
         {
             <tr>
                 <td>@img.Title</td>
-                <td>@img.Author?.Name</td>
+                <td>@img.AuthorName</td>
                 <td>@(img.PaintingDate?.ToString("dd MMMM yyyy") ?? "-")</td>
-                <td>@img.Collection?.Title</td>
+                <td>@img.CollectionTitle</td>
+                <td>@img.LikeCount</td>
+                <td>
+                    @foreach (var t in img.Tags)
+                    {
+                        <span class="tag-chip">@t.Name</span>
+                    }
+                </td>
                 <td>
                     <a asp-page="Details" asp-route-id="@img.Id">Просмотр</a>
                     @if (User.IsInRole("Moderator"))
@@ -50,3 +58,13 @@
         }
     </tbody>
 </table>
+
+<style>
+    .tag-chip {
+        display: inline-block;
+        padding: 3px 6px;
+        margin: 1px;
+        background-color: #eee;
+        border-radius: 10px;
+    }
+</style>

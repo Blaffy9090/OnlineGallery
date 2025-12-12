@@ -1,10 +1,11 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using OnlineGallery.Data;
 using OnlineGallery.Models;
+using System.Text.Json;
 
 namespace OnlineGallery.Pages.Images
 {
@@ -13,11 +14,10 @@ namespace OnlineGallery.Pages.Images
     {
         private readonly ApplicationDbContext _db;
         private readonly IWebHostEnvironment _env;
+
         public CreateModel(ApplicationDbContext db, IWebHostEnvironment env) { _db = db; _env = env; }
 
-        [BindProperty]
-        public InputModel Input { get; set; } = new();
-
+        [BindProperty] public InputModel Input { get; set; } = new();
         public SelectList AuthorSelect { get; set; } = null!;
         public SelectList CollectionSelect { get; set; } = null!;
 
@@ -28,6 +28,7 @@ namespace OnlineGallery.Pages.Images
             public int? CollectionId { get; set; }
             public DateTime? PaintingDate { get; set; }
             public string? Description { get; set; }
+            public string? TagsJson { get; set; }
         }
 
         public async Task OnGetAsync()
@@ -56,11 +57,9 @@ namespace OnlineGallery.Pages.Images
                 return Page();
             }
 
-            // ensure upload folder exists
             var uploads = Path.Combine(_env.WebRootPath, "uploads");
             if (!Directory.Exists(uploads)) Directory.CreateDirectory(uploads);
 
-            // save file with unique name
             var ext = Path.GetExtension(ImageFile.FileName);
             var fileName = $"{Guid.NewGuid()}{ext}";
             var path = Path.Combine(uploads, fileName);
@@ -80,9 +79,18 @@ namespace OnlineGallery.Pages.Images
                 CreatedAt = DateTime.UtcNow
             };
 
+            // Parse tags
+            if (!string.IsNullOrWhiteSpace(Input.TagsJson))
+            {
+                var tags = JsonSerializer.Deserialize<List<string>>(Input.TagsJson)!;
+                foreach (var t in tags)
+                {
+                    image.Tags.Add(new ImageTag { Name = t });
+                }
+            }
+
             _db.Images.Add(image);
             await _db.SaveChangesAsync();
-
             return RedirectToPage("/Gallery/Index");
         }
     }

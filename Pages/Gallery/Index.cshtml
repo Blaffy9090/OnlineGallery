@@ -8,9 +8,21 @@
 
 <form method="get" class="form-inline">
     <input type="text" name="searchString" value="@Model.Query" placeholder="Поиск по названию" />
+
     <select asp-for="AuthorId" asp-items="Model.AuthorSelect">
         <option value="">Все авторы</option>
     </select>
+
+    <select name="Tag" asp-items="Model.TagSelect">
+        <option value="">Все теги</option>
+    </select>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <label>
+            <input type="checkbox" name="OnlyLiked" value="true" @(Model.OnlyLiked ? "checked" : "") />
+            Только понравившиеся
+        </label>
+    }
     <select name="sort">
         <option value="">Сортировать по</option>
         @if (Model.Sort == "date_asc")
