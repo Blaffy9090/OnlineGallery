@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using OnlineGallery.Data;
 using OnlineGallery.Models;
+using System.Security.Claims;
 
 namespace OnlineGallery.Pages.Images
 {
@@ -41,7 +42,9 @@ namespace OnlineGallery.Pages.Images
 
             if (User.Identity?.IsAuthenticated ?? false)
             {
-                var user = await _userManager.GetUserAsync(User);
+                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier); 
+                var user = await _userManager.FindByIdAsync(userId);
+
                 UserLiked = await _db.Likes.AnyAsync(l => l.ImageId == id && l.UserId == user!.Id);
             }
 
