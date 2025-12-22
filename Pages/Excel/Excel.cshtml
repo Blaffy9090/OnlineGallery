@@ -1,0 +1,27 @@
+﻿@page
+@using Microsoft.AspNetCore.Authorization
+@attribute [Authorize(Roles = "Moderator")]
+@model OnlineGallery.Pages.Excel.ExcelModel
+@{
+    ViewData["Title"] = "Excel";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div class="mb-3">
+    <form method="post" asp-page-handler="Export">
+        <button type="submit" class="btn btn-success">Экспорт в Excel</button>
+    </form>
+</div>
+
+<div class="mb-3">
+    <form method="post" enctype="multipart/form-data" asp-page-handler="Import">
+        <input type="file" name="ExcelFile" accept=".xlsx" class="form-control mb-2" />
+        <button type="submit" class="btn btn-primary">Импорт из Excel</button>
+    </form>
+</div>
+
+@if (Model.Message != null)
+{
+    <div class="alert alert-info">@Model.Message</div>
+}
